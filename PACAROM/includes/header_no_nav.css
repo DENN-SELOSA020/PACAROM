@@ -1,0 +1,23 @@
+.main-content-full {
+    padding: 20px;
+    min-height: 100vh;
+    background-color: #f8f9fa;
+}
+
+.back-button {
+    margin-bottom: 20px;
+}
+
+.panel {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-control {
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.btn {
+    border-radius: 4px;
+    padding: 10px 20px;
+}

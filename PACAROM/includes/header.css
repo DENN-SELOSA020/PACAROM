@@ -1,0 +1,405 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(90deg, rgba(158, 228, 239, 1) 0%, rgba(19, 82, 171, 1) 100%);
+    min-height: 100vh;
+}
+
+.vertical-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 100vh;
+    background: linear-gradient(135deg, rgb(12, 174, 198) 0%, rgba(19, 82, 171, 1) 100%);
+    z-index: 1000;
+    overflow-y: auto;
+    box-shadow:
+        8px 0 32px rgba(0, 0, 0, 0.3),
+        inset -2px 0 4px rgba(255, 255, 255, 0.1),
+        inset 2px 0 4px rgba(0, 0, 0, 0.1);
+    border-right: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0 5px 5px 0;
+    backdrop-filter: blur(10px);
+}
+
+.profile-section {
+    text-align: center;
+    padding: 40px 20px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 15px;
+    margin: 15px;
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.2),
+        inset 0 2px 4px rgba(255, 255, 255, 0.3),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profile-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    color: #1352AB;
+    box-shadow:
+        0 12px 24px rgba(0, 0, 0, 0.3),
+        inset 0 4px 8px rgba(255, 255, 255, 0.4),
+        inset 0 -4px 8px rgba(0, 0, 0, 0.1);
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    transform: translateZ(20px);
+    transition: all 0.3s ease;
+}
+
+.profile-avatar:hover {
+    transform: translateZ(30px) scale(1.05);
+    box-shadow:
+        0 16px 32px rgba(0, 0, 0, 0.4),
+        inset 0 6px 12px rgba(255, 255, 255, 0.5);
+}
+
+.profile-name {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+    text-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.3),
+        0 4px 8px rgba(0, 0, 0, 0.2);
+    letter-spacing: 1px;
+}
+
+.nav-list {
+    list-style: none;
+    padding: 20px 15px;
+    margin: 0;
+}
+
+.nav-list li {
+    margin: 0 0 12px 0;
+}
+
+.nav-list li a {
+    display: flex;
+    align-items: center;
+    padding: 18px 25px;
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    transition: all 0.4s ease;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow:
+        0 4px 16px rgba(0, 0, 0, 0.1),
+        inset 0 1px 2px rgba(255, 255, 255, 0.2);
+    transform: translateZ(0);
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-list li a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s ease;
+}
+
+.nav-list li a:hover,
+.nav-list li a:focus {
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    text-decoration: none;
+    transform: translateZ(10px) translateX(8px);
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.2),
+        inset 0 2px 4px rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.nav-list li a:hover::before {
+    left: 100%;
+}
+
+.nav-list li.active a {
+    background: rgba(255, 255, 255, 0.25);
+    color: #fff;
+    font-weight: 600;
+    box-shadow:
+        0 6px 20px rgba(0, 0, 0, 0.3),
+        inset 0 3px 6px rgba(255, 255, 255, 0.4),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    transform: translateZ(15px);
+}
+.nav-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 18px;
+    opacity: 0.9;
+    font-size: 18px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-icon.home-icon {
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+    border-radius: 8px;
+    box-shadow:
+        0 4px 15px rgba(255, 154, 158, 0.4),
+        inset 0 2px 4px rgba(255, 255, 255, 0.3),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-icon.home-icon::before {
+    content: '🏠';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.nav-icon.dashboard-icon {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    border-radius: 8px;
+    box-shadow:
+        0 4px 15px rgba(168, 237, 234, 0.4),
+        inset 0 2px 4px rgba(255, 255, 255, 0.3),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-icon.dashboard-icon::before {
+    content: '📊';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+.nav-icon.settings-icon {
+    background: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%);
+    border-radius: 8px;
+    box-shadow:
+        0 4px 15px rgba(210, 153, 194, 0.4),
+        inset 0 2px 4px rgba(255, 255, 255, 0.3),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-icon.settings-icon::before {
+    content: '⚙️';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+.nav-icon.logout-icon {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 50%, #dc3545 100%);
+    border-radius: 10px;
+    box-shadow:
+        0 6px 20px rgba(220, 53, 69, 0.4),
+        inset 0 3px 6px rgba(255, 255, 255, 0.3),
+        inset 0 -3px 6px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.nav-icon.logout-icon::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    border-radius: 2px;
+    box-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.3),
+        inset 0 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+.nav-icon.logout-icon::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    border-left: 4px solid #fff;
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+}
+
+.nav-list li a:hover .nav-icon {
+    opacity: 1;
+    transform: scale(1.15) translateZ(5px);
+    filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.4));
+}
+.nav-list li a:hover .nav-icon.home-icon {
+    box-shadow:
+        0 8px 25px rgba(255, 154, 158, 0.6),
+        inset 0 3px 6px rgba(255, 255, 255, 0.4),
+        inset 0 -3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.nav-list li a:hover .nav-icon.dashboard-icon {
+    box-shadow:
+        0 8px 25px rgba(168, 237, 234, 0.6),
+        inset 0 3px 6px rgba(255, 255, 255, 0.4),
+        inset 0 -3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.nav-list li a:hover .nav-icon.settings-icon {
+    box-shadow:
+        0 8px 25px rgba(210, 153, 194, 0.6),
+        inset 0 3px 6px rgba(255, 255, 255, 0.4),
+        inset 0 -3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.nav-list li a:hover .nav-icon.logout-icon {
+    box-shadow:
+        0 10px 30px rgba(220, 53, 69, 0.7),
+        inset 0 4px 8px rgba(255, 255, 255, 0.5),
+        inset 0 -4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.2) translateZ(8px);
+    background: linear-gradient(135deg, #ff5252 0%, #f44336 50%, #c62828 100%);
+}
+
+.nav-list li a:hover .nav-icon.logout-icon::before {
+    background: #ffebee;
+    box-shadow:
+        0 3px 6px rgba(0, 0, 0, 0.4),
+        inset 0 2px 4px rgba(255, 255, 255, 0.7);
+}
+
+.nav-list li a:hover .nav-icon.logout-icon::after {
+    border-left-color: #ffebee;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+}
+.nav-list li.active .nav-icon {
+    transform: scale(1.1) translateZ(10px);
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
+}
+.nav-bottom {
+    position: absolute;
+    bottom: 20px;
+    left: 15px;
+    right: 15px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(15px);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow:
+        0 6px 20px rgba(0, 0, 0, 0.2),
+        inset 0 2px 4px rgba(255, 255, 255, 0.2);
+    padding: 10px 0;
+}
+
+.nav-bottom .nav-list {
+    padding: 10px 15px;
+}
+.main-content {
+    margin-left: 280px;
+    padding: 20px;
+    min-height: 100vh;
+    background: transparent;
+    position: relative;
+    z-index: 1;
+}
+
+.brand-section {
+    text-align: center;
+    padding: 25px 20px;
+    margin: 15px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(20px);
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.2),
+        inset 0 3px 6px rgba(255, 255, 255, 0.3);
+}
+
+.brand-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 8px 0;
+    text-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.4),
+        0 4px 12px rgba(0, 0, 0, 0.2);
+    letter-spacing: 2px;
+}
+
+.brand-subtitle {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+.vertical-nav::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0.1) 0%,
+            transparent 50%,
+            rgba(0, 0, 0, 0.1) 100%);
+    pointer-events: none;
+    border-radius: 0 20px 20px 0;
+}
+
+@media (max-width: 768px) {
+    .vertical-nav {
+        width: 100%;
+        height: auto;
+        position: relative;
+        border-radius: 0 0 20px 20px;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+}
